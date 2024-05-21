@@ -1,0 +1,10 @@
+[
+  {
+    "name": "city",
+    "pattern": "(\\bNantes\\b|\\blyon\\b|\\bParis\\b|\\bMarseilles\\b|\\bToulouse\\b|\\bBrest\\b|\\bReims\\b|\\bCaen\\b|\\bLe\\ loroux\\ Bottereau\\b|\\bBourg\\-en\\-brest\\b)"
+  },
+  {
+    "name": "date",
+    "pattern": "(\\b10\\ novembre\\ 2024\\b|\\b23\\ juin\\ 2024\\b|\\b31\\ aout\\ 2024\\b|\\b5\\ janvier\\ 2025\\b|\\b19\\ decembre\\b|\\b27\\ juillet\\b|\\b21\\ fevrier\\b|\\b31\\ octobre\\b|\\b1\\ mai\\b|\\bpremier\\ avril\\b)"
+  }
+]

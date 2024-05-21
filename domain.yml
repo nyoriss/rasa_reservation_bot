@@ -1,0 +1,186 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - sus_question
+  - weather
+  - salutations_reservation
+  - nouvelle_reservation
+  - nouvelle_reservation_date
+  - nouvelle_reservation_nb_personnes
+  - nouvelle_reservation_annulation
+  - nouvelle_reservation_confirmation
+  - nouvelle_reservation_nom
+  - nouvelle_reservation_numero
+  - nouvelle_reservation_commentaire
+  - nouvelle_reservation_confirmation_recapitulation
+  - reservation_menu_du_jour
+  - reservation_liste_des_allergenes
+  - reservation_lien_vers_carte
+  - reservation_au_revoir
+  - reservation_demande_informations
+  - reservation_code_renseigne
+  - reservation_confirmation_modifier_commentaire
+  - reservation_nouveau_commentaire
+  - reservation_ne_pas_modifier_commentaire
+  - reservation_demande_annuler_reservation
+  - reservation_confirmer_annuler_reservation
+
+actions:
+  - action_code_creator
+  - validation_code_informations
+  - validation_code_annulation
+  - validation_table_available
+  - annulation_reservation
+  - modification_commentaire
+
+entities:
+  - nb_personne
+  - date_heure
+  - nom
+  - numero_telephone
+  - commentaire
+  - code_reservation
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_yes_no:
+  - text: "Yes.\n wait I mean no"
+ 
+  utter_weather:
+  - text: "it is currently cloudy"
+
+
+  utter_restaurant_propositions:
+  - text: "Bonjour !\nque voulez vous faire : \nFaire une reservation ? \nAvoir des informations sur votre réservation ? \nAnnuler une réservation ? \nAccéder au menu du jour ? \nAvoir la liste des allergène ? \nConsulter la carte en ligne ?"
+
+  utter_restaurant_date_nouvelle_reservation:
+  - text: "Très bien, pour quand ?"
+
+  utter_restaurant_nb_personnes_nouvelle_reservation:
+  - text: "D'accord pour {slot_date_heure}, pour combien de personnes ?"
+
+#  utter_restaurant_confirmation_nouvelle_reservation:
+#  - text: "Très bien pour le {slot_date_heure} pour {slot_nb_personnes} personnes\nIl y a une table de libre pour vous !\nVous confirmez ?"
+
+#  utter_restaurant_indisponible_nouvelle_reservation:
+#  - text: "Malheureusement, aucune table n'est libre pour le {slot_date_heure} pour {slot_nb_personnes} personnes"
+
+
+  utter_restaurant_annulation_utilisateur_nouvelle_reservation:
+  - text: "D'accord, j'annule votre reservation pour le {slot_date_heure} pour {slot_nb_personnes} personnes"
+
+  utter_restaurant_nom_nouvelle_reservation:
+  - text: "Très bien, la reservation est confirmée.\nQuel nom doit être associé à cette réservation ?"
+
+  utter_restaurant_numero_nouvelle_reservation:
+  - text: "Je note le nom de {slot_nom} pour votre reservation. Pouvez vous renseigner votre numéro téléphone ?"
+
+  utter_restaurant_commentaire_nouvelle_reservation:
+  - text: "Le numéro renseigné est {slot_numero_telephone} pour votre reservation. Voulez vous ajouter un commentaire ?"
+
+  utter_restaurant_recapitulation_nouvelle_reservation:
+  - text: "Voici la récapitulation de votre réservation :\nUne table pour {slot_date_heure} pour {slot_nb_personnes} personnes\nSous le nom de {slot_nom}, avec le numero {slot_numero_telephone} et le commentaire\n\"{slot_commentaire}\"\nVous confirmez que ce récapitulatif est correct ?"
+
+#Menu du jour
+  utter_restaurant_menu_du_jour:
+  - text: "Voici le menu du jour : \nEntrée : Salade de quinoa aux légumes grillés\nPlat principal : Curry de pois chiches et légumes servi avec du riz basmati\nDessert : Tarte aux fruits de saison"
+#Liste des allergènes
+  utter_restaurant_liste_des_allergenes:
+  - text: "Voici la liste des allergènes : \nGluten (présent dans le quinoa, le curry et la tarte)\nSoja (présent dans le curry)\nLactose (absent dans ce menu)\nFructose (présent dans les fruits de la tarte)"
+#Lien de la carte
+  utter_restaurant_lien_vers_carte:
+  - text: "Voici le lien de notre carte : https://cl.gy/tbCSd"
+#Au revoir
+  utter_restaurant_au_revoir:
+  - text: "Au plaisir de vous revoir !"
+
+#Demande informations
+  utter_restaurant_demande_code:
+  - text: "D'accord, pouvez vous préciser le code de votre reservation ?"
+#Demande nouveau commentaire
+  utter_restaurant_demande_nouveau_commentaire:
+  - text: "d'accord, quel est le nouveau commentaire ?"
+
+#Afficher les informations de la reservation
+# action_afficher_reservation
+
+slots:
+  slot_date_heure:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: date_heure
+  slot_nb_personnes:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: nb_personne
+  slot_nom:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: nom
+  slot_numero_telephone:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: numero_telephone
+  slot_commentaire:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: commentaire
+  slot_code:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: code_reservation
+
+      
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+#TODO
+#Refaire la partie confirmation de reservation n°1
+# Ou trouver un moyen de faire une suite d'intent pour éviter de confondre
+#OK Faire la vérification de si le code est existant
+#Afficher les informations de reservation
+#Ajouter le fait de modifier le commentaire
+#OK Annuler la reservation
+
+

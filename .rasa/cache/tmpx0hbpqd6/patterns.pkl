@@ -1,0 +1,6 @@
+[
+  {
+    "name": "city",
+    "pattern": "(\\bNantes\\b|\\blyon\\b|\\bParis\\b|\\bMarseilles\\b|\\bToulouse\\b|\\bBrest\\b|\\bReims\\b|\\bCaen\\b|\\bLe\\ loroux\\ Bottereau\\b|\\bBourg\\-en\\-brest\\b)"
+  }
+]

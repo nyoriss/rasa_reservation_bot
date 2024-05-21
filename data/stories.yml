@@ -1,0 +1,137 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story: dark path
+  steps:
+  - intent: sus_question
+  - action: utter_yes_no
+
+- story: weather path
+  steps:
+  - intent: weather
+  - action: utter_weather
+
+- story: restaurant demande path
+  steps:
+  - intent: salutations_reservation
+  - action: utter_restaurant_propositions
+
+- story: restaurant nouvelle reservation date path
+  steps:
+  - intent: nouvelle_reservation
+  - action: utter_restaurant_date_nouvelle_reservation
+  - intent: nouvelle_reservation_date
+  - action: utter_restaurant_nb_personnes_nouvelle_reservation
+  - intent: nouvelle_reservation_nb_personnes
+  - action: validation_table_available #utter_restaurant_confirmation_nouvelle_reservation #Action custom -> vérification
+
+#- story: restaurant nouvelle reservation indisponible path
+#  steps:
+#  - intent: nouvelle_reservation_nb_personnes
+#  - action: utter_restaurant_indisponible_nouvelle_reservation
+
+- story: restaurant nouvelle reservation annulation utilisateur path
+  steps:
+  - intent: nouvelle_reservation_annulation
+  - action: utter_restaurant_annulation_utilisateur_nouvelle_reservation
+
+- story: restaurant nouvelle reservation nom path
+  steps:
+  - intent: nouvelle_reservation_confirmation
+  - action: utter_restaurant_nom_nouvelle_reservation
+  - intent: nouvelle_reservation_nom
+  - action: utter_restaurant_numero_nouvelle_reservation
+  - intent: nouvelle_reservation_numero
+  - action: utter_restaurant_commentaire_nouvelle_reservation
+  - intent: nouvelle_reservation_commentaire
+  - action: utter_restaurant_recapitulation_nouvelle_reservation
+  - intent: nouvelle_reservation_confirmation_recapitulation
+  - action: action_code_creator
+
+#Menu du jour
+- story: restaurant menu du jour
+  steps:
+  - intent: reservation_menu_du_jour
+  - action: utter_restaurant_menu_du_jour
+
+#Liste des allergènes
+- story: restaurant liste des allergenes
+  steps:
+  - intent: reservation_liste_des_allergenes
+  - action: utter_restaurant_liste_des_allergenes
+
+#Lien de la carte
+- story: restaurant lien vers carte
+  steps:
+  - intent: reservation_lien_vers_carte
+  - action: utter_restaurant_lien_vers_carte
+
+#Au revoir
+- story: restaurant au revoir
+  steps:
+  - intent: reservation_au_revoir
+  - action: utter_restaurant_au_revoir
+
+#Demande informations
+- story: restaurant demande informations
+  steps:
+  - intent: reservation_demande_informations
+  - action: utter_restaurant_demande_code
+  - intent: reservation_code_renseigne
+  - action: validation_code_informations
+
+#Demande refus modification de commentaire
+- story: restaurant demande refus modifier commentaire
+  steps:
+  - intent: reservation_ne_pas_modifier_commentaire
+  - action: utter_restaurant_au_revoir
+
+#Demande modification de commentaire
+- story: restaurant demande modifier commentaire
+  steps:
+  - intent: reservation_confirmation_modifier_commentaire
+  - action: utter_restaurant_demande_nouveau_commentaire
+
+- story: restaurant modifier commentaire
+  steps:
+  - intent: reservation_nouveau_commentaire
+  - action: modification_commentaire
+
+#Demande annulation reservation
+- story: restaurant demande annulation reservation
+  steps:
+  - intent: reservation_demande_annuler_reservation
+  - action: utter_restaurant_demande_code
+  - intent: reservation_code_renseigne
+  - action: validation_code_annulation
+  - intent: reservation_confirmer_annuler_reservation
+  - action: annulation_reservation

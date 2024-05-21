@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-commentaire",
+      "2": "I-commentaire",
+      "3": "L-commentaire",
+      "4": "U-commentaire",
+      "5": "B-date_heure",
+      "6": "I-date_heure",
+      "7": "L-date_heure",
+      "8": "U-date_heure",
+      "9": "B-nb_personne",
+      "10": "I-nb_personne",
+      "11": "L-nb_personne",
+      "12": "U-nb_personne",
+      "13": "B-nom",
+      "14": "I-nom",
+      "15": "L-nom",
+      "16": "U-nom",
+      "17": "B-numero_telephone",
+      "18": "I-numero_telephone",
+      "19": "L-numero_telephone",
+      "20": "U-numero_telephone",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-commentaire": 1,
+      "I-commentaire": 2,
+      "L-commentaire": 3,
+      "U-commentaire": 4,
+      "B-date_heure": 5,
+      "I-date_heure": 6,
+      "L-date_heure": 7,
+      "U-date_heure": 8,
+      "B-nb_personne": 9,
+      "I-nb_personne": 10,
+      "L-nb_personne": 11,
+      "U-nb_personne": 12,
+      "B-nom": 13,
+      "I-nom": 14,
+      "L-nom": 15,
+      "U-nom": 16,
+      "B-numero_telephone": 17,
+      "I-numero_telephone": 18,
+      "L-numero_telephone": 19,
+      "U-numero_telephone": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]
