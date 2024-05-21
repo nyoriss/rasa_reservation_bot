@@ -16,7 +16,9 @@ Après un certain moment, vous apercevrez "Your input ->" et pourrez échanger a
 Commencez par saluer le bot avec un "bonjour" ou "bonsoir", et laissez vous guider !
 
 ### Remarques
-Afin de simuler l'affluence (et donc le manque de places) dans le restaurant, le nombre maximum de personnes par jour est de 5 cumulé. Par exemple, vous ne pourrez pas faire de réservation pour 2 personnes le 2 avril si une réservation est déjà prévue ce jour pour 4 personnes. Il en va de même pour les réservations de plus de 5 personnes.
+- Afin de simuler l'affluence (et donc le manque de places) dans le restaurant, le nombre maximum de personnes par jour est de 5 cumulé. Par exemple, vous ne pourrez pas faire de réservation pour 2 personnes le 2 avril si une réservation est déjà prévue ce jour pour 4 personnes. Il en va de même pour les réservations de plus de 5 personnes.
+- Le stockage des réservations se fait via un fichier csv qui se situe dans le dossier  ```actions/storage/``` Vous pourrez ajouter
+
 
 ### Conseils d'utilisation : 
 - Certaines formulations de phrases sont ambigues pour le bot, si un parcourt qui vous semble anormal survient, veuillez reformuler votre dernière phrase autrement. Les phrases construites fonctionnent mieux que des phrases trop courtes
@@ -24,3 +26,7 @@ Afin de simuler l'affluence (et donc le manque de places) dans le restaurant, le
 
 Bug connus : 
 - Votre nom ne sera probablement pas corrrectement pris en charge et sera remplacé par None le cas échéant. Dans le cas contraire : **Félicitations** !
+- Votre commentaire pourrait être coupé et ne pas apparaître complêtement.
+- Essayez d'éviter au maximum l'utilisation de la négative lors de la rédaction de votre commentaire, le bot risque de prendre cela comme un refus de commentaire.
+
+
