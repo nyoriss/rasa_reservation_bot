@@ -167,20 +167,6 @@ slots:
     - type: from_entity
       entity: code_reservation
 
-      
-
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
-
-#TODO
-#Refaire la partie confirmation de reservation n°1
-# Ou trouver un moyen de faire une suite d'intent pour éviter de confondre
-#OK Faire la vérification de si le code est existant
-#Afficher les informations de reservation
-#Ajouter le fait de modifier le commentaire
-#OK Annuler la reservation
-
-
